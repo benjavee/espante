@@ -1,22 +1,18 @@
-import starterPackSvg from '../assets/starter pack.svg'
-import tuConnaisPackSvg from '../assets/tu connais pack.svg'
-import tyeUnBonPackSvg from '../assets/tyé un bon pack.svg'
-import tripleMonstrePackSvg from '../assets/triple monstre pack.svg'
 import { NextPage } from 'next'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next/image'
 import Head from 'next/head'
 
 const packs = [
-    { id: 1, title: 'Starter Pack', price: '10€', image: starterPackSvg },
-    { id: 2, title: 'Tu Connais ! Pack', price: '20€', image: tuConnaisPackSvg },
-    { id: 3, title: "T'es un Bon Pack", price: "50€", image: tyeUnBonPackSvg },
-    { id: 4, title: 'Triple Monstre Pack', price: '80€', image: tripleMonstrePackSvg },
+    { id: 1, title: 'Starter Pack', price: '10€', image: '/assets/starter-pack.svg' },
+    { id: 2, title: 'Tu Connais ! Pack', price: '20€', image: '/assets/tu-connais-pack.svg' },
+    { id: 3, title: "T'es un Bon Pack", price: "50€", image: '/assets/tye-un-bon-pack.svg' },
+    { id: 4, title: 'Triple Monstre Pack', price: '80€', image: '/assets/triple-monstre-pack.svg' },
 ]
 
 type PackCardProps = {
     title: string
     price: string
-    image: ImageProps['src']
+    image: string
 }
 
 const PackCard: React.FC<PackCardProps> = ({ title, price, image }) => (
