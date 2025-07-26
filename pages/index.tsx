@@ -6,7 +6,7 @@ import Bronchade from '../assets/Bronchade.svg'
 import dessinGueutas from '../assets/dessin_gueutas.svg'
 import fanzineImage from '../assets/fanzine.png'
 import persoMain from '../assets/Perso_plein_pied_logo.svg'
-import persoPortrait from '../assets/Perso_portrait_américain.svg'
+import persoPortrait from '../assets/Perso_portrait_americain.svg'
 
 import starterPack from '../assets/starter_pack.svg'
 import tuConnaisPack from '../assets/tu_connais_pack.svg'
