@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import Bronchade from '../assets/Bronchade.svg'
 import dessinGueutas from '../assets/dessin_gueutas.svg'
@@ -8,45 +10,33 @@ import fanzineImage from '../assets/fanzine.png'
 import persoMain from '../assets/Perso_plein_pied_logo.svg'
 import persoPortrait from '../assets/Perso_portrait_americain.svg'
 
-import starterPack from '../assets/starter_pack.svg'
-import tuConnaisPack from '../assets/tu_connais_pack.svg'
-import tUnBonPack from '../assets/tye_un bon_pack.svg'
-import tripleMonstrePack from '../assets/triple_monstre_pack.svg'
+
 import LogoPng from '../assets/logo.png'
 
-const packs = [
-  { id: 1, title: 'Starter Pack', price: '10€', image: starterPack },
-  { id: 2, title: 'Tu Connais ! Pack', price: '20€', image: tuConnaisPack },
-  { id: 3, title: 'T es un Bon Pack', price: "50€", image: tUnBonPack },
-  { id: 4, title: 'Triple Monstre Pack', price: '80€', image: tripleMonstrePack },
-]
+import { packs } from '../model/packs'
+
 
 type PackCardProps = {
-  id: number
-  title: string
-  price: string
+  slug: string
   image: any
 }
 
-const PackCard: React.FC<PackCardProps> = ({ id, title, price, image }) => (
-    <div className="relative">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center text-center">
-            <div className="w-full h-48 relative">
-                <Image src={image} layout="fill" objectFit="contain" alt={title} />
-            </div>
-            <div className="p-4 flex-1 flex flex-col justify-between">
-                <h3 className="font-bold text-lg">{title}</h3>
-                <span className="mt-2 text-xl text-yellow-600">{price}</span>
-                <button className="mt-4 px-4 py-2 bg-gray-700 text-white rounded-md">Détails</button>
-            </div>
-        </div>
-        {id === 3 && (
-            <div className="absolute -top-8 right-4 w-8 h-8">
-                <Image src={Bronchade} width={32} height={32} alt="pointer" />
-            </div>
-        )}
+const PackCard: React.FC<PackCardProps> = ({ slug, image }) => {
+  const router = useRouter()
+  return (
+    <div className="relative shadow-lg rounded-lg overflow-visible">
+      <div className="relative w-full" style={{ paddingBottom: '210%' }}>
+        <Image src={image} layout="fill" objectFit="contain" alt="" />
+      </div>
+      <button
+        className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 px-6 py-2 bg-gray-800 text-white rounded-lg shadow-md"
+        onClick={() => router.push(`/packs/${slug}`)}
+      >
+        Détails
+      </button>
     </div>
-)
+  )
+}
 
 const Home: NextPage = () => {
     return (
@@ -56,18 +46,19 @@ const Home: NextPage = () => {
                 <meta name="description" content="Précommande de fanzines et packs exclusifs" />
             </Head>
             <main className="flex flex-col">
-              <header>
-                <div className="bg-purple-600 w-full py-4">
-                  <div className="max-w-5xl mx-auto px-4 flex items-center">
-                    <div className="relative">
-                      <Image src={LogoPng} width={150} height={50} alt="Espante logo" />
-                    </div>
-                    <nav className="ml-auto space-x-6 text-white">
-                      <a href="#" className="hover:underline">Home</a>
-                      <a href="#" className="hover:underline">Contact</a>
-                      <a href="#packs" className="hover:underline">Shop</a>
-                    </nav>
+              <header className="relative overflow-visible mt-12">
+                {/* Top bar background */}
+                <div className="bg-[#6e688c] h-12 mx-[5%] rounded-t-md"></div>
+                {/* Logo and nav floating above the bar */}
+                <div className="absolute left-[5%] right-[10%] top-0 flex items-center justify-between" style={{ height: '96px' }}>
+                  <div className="relative z-10 -translate-y-4">
+                    <Image src={LogoPng} width={200} height={80} alt="Espante logo" />
                   </div>
+                  <nav className="space-x-6 text-white z-10 -translate-y-5">
+                    <a href="#" className="hover:underline">Home</a>
+                    <a href="#" className="hover:underline">Contact</a>
+                    <a href="#packs" className="hover:underline">Shop</a>
+                  </nav>
                 </div>
               </header>
                 {/* Hero Section */}
@@ -88,16 +79,18 @@ const Home: NextPage = () => {
                 </section>
 
                 {/* Packs Section */}
-                <section id="packs" className="py-16 bg-white">
+                <section id="packs" className="py-16 bg-white relative overflow-visible">
                     <div className="max-w-5xl mx-auto px-4 relative">
-                        <div className="absolute -bottom-16 left-0 w-40 opacity-50 pointer-events-none">
-                            <Image src={dessinGueutas} width={160} height={100} alt="decorative sketch" />
-                        </div>
                         <h2 className="text-2xl font-bold text-center mb-8">Les 4 Packs</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {packs.map(pack => (
-                                <PackCard key={pack.id} id={pack.id} title={pack.title} price={pack.price} image={pack.image} />
-                            ))}
+                        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                          {packs.map(pack => (
+                            <div key={pack.id} className="relative z-10">
+                              <PackCard slug={pack.slug} image={pack.image} />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 opacity-50 pointer-events-none z-0">
+                          <Image src={dessinGueutas} width={200} height={150} alt="decorative sketch" />
                         </div>
                     </div>
                 </section>
@@ -142,6 +135,10 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                 </section>
+              {/* Bottom Logo */}
+              <div className="py-8 flex justify-center">
+                <Image src={LogoPng} width={120} height={60} alt="Espante logo" />
+              </div>
             </main>
         </>
     )
