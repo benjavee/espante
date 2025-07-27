@@ -25,6 +25,7 @@ export type Pack = {
     price: string
     preview: any
     logo: any
+    stripeUrl:string
     items: { label: string; image: any }[]
     color: string
 }
@@ -40,7 +41,8 @@ export const packs: Pack[] = [
         items: [
           { label: STICKERS_DESC, image: stickersThumb }
         ],
-        color: '#E0C165'
+        color: '#E0C165',
+        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
     },
     {
         id: 2,
@@ -53,7 +55,9 @@ export const packs: Pack[] = [
             { label: STICKERS_DESC, image: stickersThumb },
             { label: PRINTS_DESC, image: printsThumb },
         ],
-        color: '#F29730'
+        color: '#F29730',
+        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+
     },
     {
         id: 3,
@@ -68,7 +72,9 @@ export const packs: Pack[] = [
             { label: CASQUETTE_DESC, image: casquetteThumb },
             { label: TSHIRT_DESC, image: tshirtThumb },
         ],
-        color: '#6E688C'
+        color: '#6E688C',
+        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+
     },
     {
         id: 4,
@@ -83,6 +89,7 @@ export const packs: Pack[] = [
             { label: CASQUETTE_DESC, image: casquetteThumb },
             { label: TSHIRT_DESC, image: tshirtThumb },
         ],
-        color: '#D64545'
+        color: '#D64545',
+        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
     },
 ]

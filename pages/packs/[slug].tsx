@@ -13,7 +13,7 @@ type PackPageProps = {
 }
 
 const PackPage: NextPage<PackPageProps> = ({ pack }) => {
-  const { title, price, items, color, logo, preview } = pack
+  const { title, price, items, color, logo, preview ,stripeUrl} = pack
   const [currentIndex, setCurrentIndex] = useState(0)
   const slides = [{ label: 'preview', image: preview }, ...items]
   return (
@@ -107,7 +107,7 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
                 ))}
               </ul>
               <a
-                href="#"
+                href={stripeUrl}
                 className="absolute bottom-[-30px] right-5 bg-gray-800 text-white uppercase px-6 py-3 rounded-full shadow-md"
               >
                 Précommander

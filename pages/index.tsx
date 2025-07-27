@@ -104,7 +104,7 @@ useEffect(() => {
                 <section id="packs" className="py-16 bg-white relative overflow-visible">
                     <div className="max-w-5xl mx-auto px-4 relative">
                         <h2 className="text-2xl font-bold text-center mb-8">Les 4 Packs</h2>
-                        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                           {packs.map(pack => (
                             <div key={pack.id} className="relative z-10">
                               <PackCard slug={pack.slug} image={pack.preview} />
