@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import Bronchade from '../assets/Bronchade.svg'
+import { useState, useEffect } from 'react'
 import dessinGueutas from '../assets/dessin_gueutas.svg'
 import fanzineImage from '../assets/fanzine.png'
 import persoMain from '../assets/Perso_plein_pied_logo.svg'
@@ -39,6 +40,27 @@ const PackCard: React.FC<PackCardProps> = ({ slug, image }) => {
 }
 
 const Home: NextPage = () => {
+  const [showBronchade, setShowBronchade] = useState(false)
+  const [pos, setPos] = useState({ top: 0, left: 0 })
+
+useEffect(() => {
+  const delay = Math.random() * (5000) + 2000
+  const timer = setTimeout(() => {
+    const vw = window.innerWidth
+    const vh = window.innerHeight
+    setPos({
+      top: Math.random() * (vh - 200),     // ensure visible
+      left: Math.random() * (vw - 200),
+    })
+    setShowBronchade(true)
+    // Hide after 2 seconds
+    const hideTimer = setTimeout(() => setShowBronchade(false), 2000)
+    // Clear hideTimer if unmounted early
+    return () => clearTimeout(hideTimer)
+  }, delay)
+  return () => clearTimeout(timer)
+}, [])
+
     return (
         <>
             <Head>
@@ -85,7 +107,7 @@ const Home: NextPage = () => {
                         <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                           {packs.map(pack => (
                             <div key={pack.id} className="relative z-10">
-                              <PackCard slug={pack.slug} image={pack.image} />
+                              <PackCard slug={pack.slug} image={pack.preview} />
                             </div>
                           ))}
                         </div>
@@ -139,7 +161,34 @@ const Home: NextPage = () => {
               <div className="py-8 flex justify-center">
                 <Image src={LogoPng} width={120} height={60} alt="Espante logo" />
               </div>
+              {showBronchade && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    top: pos.top,
+                    left: pos.left,
+                    width: 200,
+                    height: 200,
+                    zIndex: 9999,
+                    animation: 'dropZoom 0.8s ease-out forwards, fadeOut 0.3s ease-in 1s forwards',
+                  }}
+                >
+                  <Image src={Bronchade} layout="fill" objectFit="contain" alt="" />
+                </div>
+              )}
             </main>
+            {/* eslint-disable-next-line react/no-unknown-property */}
+            <style jsx global>{`
+              @keyframes dropZoom {
+                0% { transform: scale(0.2) translateY(-100px); opacity: 0; }
+                50% { transform: scale(1.5) translateY(20px); opacity: 1; }
+                100% { transform: scale(1) translateY(0); opacity: 1; }
+              }
+              @keyframes fadeOut {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+              }
+            `}</style>
         </>
     )
 }
