@@ -88,7 +88,7 @@ useEffect(() => {
                     {/* Background Circle */}
                     <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-yellow-200 rounded-full" />
                     {/* Hero Content */}
-                    <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-8">
+                    <div className="relative z-10 max-w-5xl mx-[10px] md:mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-8">
                         <div className="flex-1">
                             <h1 className="text-5xl font-extrabold">Nouveau Fanzine</h1>
                             <p className="mt-2 text-2xl">4 packs en précommande</p>
@@ -102,9 +102,9 @@ useEffect(() => {
 
                 {/* Packs Section */}
                 <section id="packs" className="py-16 bg-white relative overflow-visible">
-                    <div className="max-w-5xl mx-auto px-4 relative">
+                    <div className="max-w-5xl mx-[10px] md:mx-auto px-4 relative">
                         <h2 className="text-2xl font-bold text-center mb-8">Les 4 Packs</h2>
-                        <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 md:gap-y-6">
                           {packs.map(pack => (
                             <div key={pack.id} className="relative z-10">
                               <PackCard slug={pack.slug} image={pack.preview} />

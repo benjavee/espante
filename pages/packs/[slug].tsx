@@ -48,7 +48,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
             </header>
             <main className="pt-32 min-h-screen py-12">
                 <div
-                    className="relative mx-auto max-w-5xl p-18 rounded-lg shadow-lg"
+                    className="relative mx-[10px] md:mx-auto max-w-5xl p-18 rounded-lg shadow-lg"
                     style={{backgroundColor: color}}
                 >
                     <button
@@ -128,16 +128,16 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         </aside>
                     </div>
                 </div>
-                <div className="relative mx-auto max-w-5xl px-8 py-6 md:py-0 mt-24 rounded-lg shadow-lg"
+                <div className="relative mx-[10px] md:mx-auto max-w-5xl px-8 py-6 md:py-0 mt-24 rounded-lg shadow-lg"
                      style={{backgroundColor: color}}>
                     <button
-                        className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 rounded-full shadow-md">
+                        className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 whitespace-nowrap rounded-full shadow-md">
                         Les autres packs
                     </button>
                     <div className="mt-8 flex justify-around items-center">
                         {packs.filter((p) => p.slug !== slug).map((otherPack) => (
                             <Link key={otherPack.slug} href={`/packs/${otherPack.slug}`}>
-                                <a className="block px-4">
+                                <a className="block px-1">
                                     <Image
                                         src={otherPack.logo}
                                         alt={`${otherPack.title} logo`}
