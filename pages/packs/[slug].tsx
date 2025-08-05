@@ -45,12 +45,12 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
           </nav>
         </div>
       </header>
-      <main className="pt-24 min-h-screen py-12">
+      <main className="pt-32 min-h-screen py-12">
         <div
-          className="relative mx-auto max-w-5xl p-8 rounded-lg shadow-lg"
+          className="relative mx-auto max-w-5xl p-18 rounded-lg shadow-lg"
           style={{ backgroundColor: color }}
         >
-          <div className="absolute top-0 left-0 ml-4 -mt-8 z-20" style={{ transform: 'rotate(-15deg) scale(1.7)' }}>
+          <div className="absolute -top-2 left-0 ml-4 z-20" style={{ transform: 'scale(1.7)' }}>
             <Image src={logo} width={300} height={100} alt={`${title} logo`} />
           </div>
           <div className="pt-16"></div>
@@ -126,7 +126,7 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
             </aside>
           </div>
         </div>
-        <div className="relative mx-auto max-w-5xl p-8 mt-24 rounded-lg shadow-lg" style={{ backgroundColor: color }}>
+        <div className="relative mx-auto max-w-5xl px-8 py-0 mt-24 rounded-lg shadow-lg" style={{ backgroundColor: color }}>
           <button className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 rounded-full shadow-md">
             Les autres packs
           </button>
@@ -136,8 +136,6 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
                 <a className="block">
                   <Image
                     src={otherPack.logo}
-                    width={150}
-                    height={50}
                     alt={`${otherPack.title} logo`}
                   />
                 </a>
