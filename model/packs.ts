@@ -4,6 +4,10 @@ import starter_preview from '../assets/packs/starter/preview.svg'
 import tuConnais_preview from '../assets/packs/tuConnais/preview.svg'
 import unBon_preview from '../assets/packs/unBon/preview.svg'
 import triple_preview from '../assets/packs/triple/preview.svg'
+import starter_detail from '../assets/packs/starter/detail.jpg'
+import tuConnais_detail from '../assets/packs/tuConnais/detail.jpg'
+import unBon_detail from '../assets/packs/unBon/detail.jpg'
+import triple_detail from '../assets/packs/triple/detail.jpg'
 import starter_logo from '../assets/packs/starter/logo.png'
 import tuConnais_logo from '../assets/packs/tuConnais/logo.png'
 import unBon_logo from '../assets/packs/unBon/logo.png'
@@ -24,6 +28,7 @@ export type Pack = {
     title: string
     price: string
     preview: any
+    detail: any
     logo: any
     stripeUrl: { label: string; url: string }[]
     items: { label: string; image: any }[]
@@ -37,6 +42,7 @@ export const packs: Pack[] = [
         title: 'Starter',
         price: '10€',
         preview: starter_preview,
+        detail: starter_detail,
         logo: starter_logo,
         items: [
             {label: STICKERS_DESC, image: stickersThumb}
@@ -54,6 +60,7 @@ export const packs: Pack[] = [
         title: 'Tu Connais !',
         price: '20€',
         preview: tuConnais_preview,
+        detail: tuConnais_detail,
         logo: tuConnais_logo,
         items: [
             {label: STICKERS_DESC, image: stickersThumb},
@@ -73,6 +80,7 @@ export const packs: Pack[] = [
         title: "T'y es un Bon",
         price: '50€',
         preview: unBon_preview,
+        detail: unBon_detail,
         logo: unBon_logo,
         items: [
             {label: STICKERS_DESC, image: stickersThumb},
@@ -98,6 +106,7 @@ export const packs: Pack[] = [
         title: 'Triple Monstre',
         price: '80€',
         preview: triple_preview,
+        detail: triple_detail,
         logo: triple_logo,
         items: [
             {label: STICKERS_DESC, image: stickersThumb},
@@ -108,7 +117,7 @@ export const packs: Pack[] = [
         color: '#D64545',
         stripeUrl: [
             {
-                label: 'pack tshirt', url: 'https://buy.stripe.com/bJe9AU5kM2t72vSfKqcZa00'
+                label: 'Précommander', url: 'https://buy.stripe.com/bJe9AU5kM2t72vSfKqcZa00'
             }
         ]
     },
