@@ -22,7 +22,7 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
         <title>{title} – Espante</title>
         <meta name="description" content={`Page de détails pour ${title}`} />
       </Head>
-      <header className="relative overflow-visible mt-12">
+      <header className="fixed top-4 left-0 w-full overflow-visible z-50">
         {/* Top bar background */}
         <div className="bg-[#6e688c] h-12 mx-[5%] rounded-t-md"></div>
         {/* Logo and nav floating above the bar */}
@@ -39,7 +39,7 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
           </nav>
         </div>
       </header>
-      <main className="min-h-screen py-12">
+      <main className="pt-24 min-h-screen py-12">
         <div
           className="relative mx-auto max-w-5xl p-8 rounded-lg shadow-lg"
           style={{ backgroundColor: color }}

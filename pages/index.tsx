@@ -67,8 +67,8 @@ useEffect(() => {
                 <title>Espante - Précommande Fanzine</title>
                 <meta name="description" content="Précommande de fanzines et packs exclusifs" />
             </Head>
-            <main className="flex flex-col">
-              <header className="relative overflow-visible mt-12">
+            <main className="pt-24 flex flex-col">
+              <header className="fixed top-4 left-0 w-full overflow-visible z-50">
                 {/* Top bar background */}
                 <div className="bg-[#6e688c] h-12 mx-[5%] rounded-t-md"></div>
                 {/* Logo and nav floating above the bar */}
