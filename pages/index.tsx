@@ -88,13 +88,13 @@ useEffect(() => {
                     {/* Background Circle */}
                     <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-yellow-200 rounded-full" />
                     {/* Hero Content */}
-                    <div className="relative z-10 max-w-5xl mx-[10px] md:mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-8">
+                    <div className="relative z-10 max-w-5xl mx-[10px] md:mx-auto px-4 py-12 md:py-20 flex flex-col lg:flex-row items-center gap-8">
                         <div className="flex-1">
                             <h1 className="text-5xl font-extrabold">Nouveau Fanzine</h1>
                             <p className="mt-2 text-2xl">4 packs en précommande</p>
                             <p className="mt-8 text-lg font-medium">Livraison Automne 2025</p>
                         </div>
-                        <div className="flex-1 relative w-full h-80">
+                        <div className="flex-1 relative w-full h-48 md:h-80">
                             <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview" />
                         </div>
                     </div>
@@ -118,7 +118,7 @@ useEffect(() => {
                 </section>
 
                 {/* Info Section */}
-                <section className="py-16 bg-yellow-50">
+                <section className="py-8 md:py-16 bg-yellow-50">
                     <div className="max-w-5xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
                         <div className="flex-1">
                             <h2 className="text-4xl font-bold">Deuxième Fanzine en Approche</h2>
@@ -130,7 +130,7 @@ useEffect(() => {
                             </p>
 
                         </div>
-                        <div className="flex-1 relative w-full h-80">
+                        <div className="flex-1 relative w-full h-48 md:h-80">
                             <Image src={persoMain} layout="fill" objectFit="contain" alt="Character" />
                         </div>
                     </div>
