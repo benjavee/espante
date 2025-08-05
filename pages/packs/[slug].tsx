@@ -137,7 +137,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                     <div className="mt-8 flex justify-around items-center">
                         {packs.filter((p) => p.slug !== slug).map((otherPack) => (
                             <Link key={otherPack.slug} href={`/packs/${otherPack.slug}`}>
-                                <a className="block">
+                                <a className="block px-4">
                                     <Image
                                         src={otherPack.logo}
                                         alt={`${otherPack.title} logo`}
