@@ -100,7 +100,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
 
                         {/* Details list and call to action */}
                         <aside className="col-span-3 text-white">
-                            <ul className="list-disc pl-5 space-y-2 mb-6 text-lg">
+                            <ul className="list-disc pl-5 space-y-2 mb-6 pb-4 text-lg">
                                 <li>
                                     Fanzine 48 pages<br/>Impressions couleurs offset 90gr.
                                 </li>

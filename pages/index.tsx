@@ -128,9 +128,7 @@ useEffect(() => {
                             <p className="mt-6 text-base leading-relaxed">
                               Pour répondre à toutes les envies et tous les budgets, <strong>4 packs différents</strong> sont disponibles en précommande. Choisissez <strong>la formule qui vous convient</strong> et soutenez la création indépendante tout en vous assurant de recevoir votre exemplaire dès sa sortie !
                             </p>
-                            <button className="mt-6 px-6 py-3 bg-orange-500 text-white font-semibold rounded-md">
-                                Découvrir les packs
-                            </button>
+
                         </div>
                         <div className="flex-1 relative w-full h-80">
                             <Image src={persoMain} layout="fill" objectFit="contain" alt="Character" />
