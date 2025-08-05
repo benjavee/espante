@@ -33,9 +33,15 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
             </a>
           </Link>
           <nav className="space-x-6 text-white z-10 -translate-y-5">
-            <a href=".." className="hover:underline">Home</a>
-            <a href="/#instagram" className="hover:underline">Contact</a>
-            <a href="/#packs"  className="hover:underline">Shop</a>
+            <Link href="/">
+              <a className="hover:underline">Home</a>
+            </Link>
+            <Link href="/#instagram">
+              <a className="hover:underline">Contact</a>
+            </Link>
+            <Link href="/#packs">
+              <a className="hover:underline">Shop</a>
+            </Link>
           </nav>
         </div>
       </header>
