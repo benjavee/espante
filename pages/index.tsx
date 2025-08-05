@@ -78,7 +78,7 @@ useEffect(() => {
                   </div>
                   <nav className="space-x-6 text-white z-10 -translate-y-5">
                     <a href="#" className="hover:underline">Home</a>
-                    <a href="#" className="hover:underline">Contact</a>
+                    <a href="#instagram" className="hover:underline">Contact</a>
                     <a href="#packs" className="hover:underline">Shop</a>
                   </nav>
                 </div>
@@ -148,7 +148,13 @@ useEffect(() => {
                             <h2 className="text-3xl font-bold">Paiement Sécurisé</h2>
                             <p className="mt-2 text-xl">Livraison Possible • Remise en main propre</p>
                             <p className="mt-4 text-sm text-gray-700">Si tu as la moindre question, viens me parler sur Insta!</p>
-                            <a href="https://instagram.com/LaGoutanerie" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block px-4 py-2 bg-pink-500 text-white rounded-md">
+                            <a
+                              id="instagram"
+                              href="https://instagram.com/LaGoutanerie"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-4 inline-block px-4 py-2 bg-pink-500 text-white rounded-md"
+                            >
                                 @LaGoutanerie
                             </a>
                         </div>

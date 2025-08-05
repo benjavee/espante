@@ -25,7 +25,7 @@ export type Pack = {
     price: string
     preview: any
     logo: any
-    stripeUrl:string
+    stripeUrl: { label: string; url: string }[]
     items: { label: string; image: any }[]
     color: string
 }
@@ -37,12 +37,16 @@ export const packs: Pack[] = [
         title: 'Starter',
         price: '10€',
         preview: starter_preview,
-        logo:starter_logo,
+        logo: starter_logo,
         items: [
-          { label: STICKERS_DESC, image: stickersThumb }
+            {label: STICKERS_DESC, image: stickersThumb}
         ],
         color: '#E0C165',
-        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+        stripeUrl: [
+            {
+                label: 'Précommander', url: 'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+            }
+        ]
     },
     {
         id: 2,
@@ -50,13 +54,17 @@ export const packs: Pack[] = [
         title: 'Tu Connais !',
         price: '20€',
         preview: tuConnais_preview,
-        logo:tuConnais_logo,
+        logo: tuConnais_logo,
         items: [
-            { label: STICKERS_DESC, image: stickersThumb },
-            { label: PRINTS_DESC, image: printsThumb },
+            {label: STICKERS_DESC, image: stickersThumb},
+            {label: PRINTS_DESC, image: printsThumb},
         ],
         color: '#F29730',
-        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+        stripeUrl: [
+            {
+                label: 'Précommander', url: 'https://buy.stripe.com/dRm3cw5kM0kZb2ofKqcZa03'
+            }
+        ]
 
     },
     {
@@ -65,15 +73,23 @@ export const packs: Pack[] = [
         title: "T'y es un Bon",
         price: '50€',
         preview: unBon_preview,
-        logo:unBon_logo,
+        logo: unBon_logo,
         items: [
-            { label: STICKERS_DESC, image: stickersThumb },
-            { label: PRINTS_DESC, image: printsThumb },
-            { label: CASQUETTE_DESC, image: casquetteThumb },
-            { label: TSHIRT_DESC, image: tshirtThumb },
+            {label: STICKERS_DESC, image: stickersThumb},
+            {label: PRINTS_DESC, image: printsThumb},
+            {label: CASQUETTE_DESC, image: casquetteThumb},
+            {label: TSHIRT_DESC, image: tshirtThumb},
         ],
         color: '#6E688C',
-        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+        stripeUrl:
+            [
+                {
+                    label: 'pack tshirt', url: 'https://buy.stripe.com/9B65kE9B28Rv9Yk0PwcZa02'
+                },
+                {
+                    label: 'pack casquette', url: 'https://buy.stripe.com/aFa4gAcNeffT0nKdCicZa01'
+                }
+            ]
 
     },
     {
@@ -82,14 +98,18 @@ export const packs: Pack[] = [
         title: 'Triple Monstre',
         price: '80€',
         preview: triple_preview,
-        logo:triple_logo,
+        logo: triple_logo,
         items: [
-            { label: STICKERS_DESC, image: stickersThumb },
-            { label: PRINTS_DESC, image: printsThumb },
-            { label: CASQUETTE_DESC, image: casquetteThumb },
-            { label: TSHIRT_DESC, image: tshirtThumb },
+            {label: STICKERS_DESC, image: stickersThumb},
+            {label: PRINTS_DESC, image: printsThumb},
+            {label: CASQUETTE_DESC, image: casquetteThumb},
+            {label: TSHIRT_DESC, image: tshirtThumb},
         ],
         color: '#D64545',
-        stripeUrl:'https://buy.stripe.com/fZudRacNegjXfiE69QcZa04'
+        stripeUrl: [
+            {
+                label: 'pack tshirt', url: 'https://buy.stripe.com/bJe9AU5kM2t72vSfKqcZa00'
+            }
+        ]
     },
 ]

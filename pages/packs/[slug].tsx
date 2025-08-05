@@ -13,7 +13,7 @@ type PackPageProps = {
 }
 
 const PackPage: NextPage<PackPageProps> = ({ pack }) => {
-  const { title, price, items, color, logo, preview ,stripeUrl} = pack
+  const { slug, title, price, items, color, logo, preview, stripeUrl } = pack
   const [currentIndex, setCurrentIndex] = useState(0)
   const slides = [{ label: 'preview', image: preview }, ...items]
   return (
@@ -34,8 +34,8 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
           </Link>
           <nav className="space-x-6 text-white z-10 -translate-y-5">
             <a href=".." className="hover:underline">Home</a>
-            <a href="#" className="hover:underline">Contact</a>
-            <a href=".." className="hover:underline">Shop</a>
+            <a href="/#instagram" className="hover:underline">Contact</a>
+            <a href="/#packs"  className="hover:underline">Shop</a>
           </nav>
         </div>
       </header>
@@ -106,13 +106,37 @@ const PackPage: NextPage<PackPageProps> = ({ pack }) => {
                   </li>
                 ))}
               </ul>
-              <a
-                href={stripeUrl}
-                className="absolute bottom-[-30px] right-5 bg-gray-800 text-white uppercase px-6 py-3 rounded-full shadow-md"
-              >
-                Précommander
-              </a>
+              <div className="absolute bottom-[-30px] right-5 flex space-x-4">
+                {stripeUrl.map((button) => (
+                  <a
+                    key={button.url}
+                    href={button.url}
+                    className="bg-gray-800 text-white uppercase px-6 py-3 rounded-full shadow-md"
+                  >
+                    {button.label}
+                  </a>
+                ))}
+              </div>
             </aside>
+          </div>
+        </div>
+        <div className="relative mx-auto max-w-5xl p-8 mt-24 rounded-lg shadow-lg" style={{ backgroundColor: color }}>
+          <button className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 rounded-full shadow-md">
+            Les autres packs
+          </button>
+          <div className="mt-8 flex justify-around items-center">
+            {packs.filter((p) => p.slug !== slug).map((otherPack) => (
+              <Link key={otherPack.slug} href={`/packs/${otherPack.slug}`}>
+                <a className="block">
+                  <Image
+                    src={otherPack.logo}
+                    width={150}
+                    height={50}
+                    alt={`${otherPack.title} logo`}
+                  />
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
       </main>
