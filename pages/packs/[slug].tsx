@@ -147,6 +147,9 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         ))}
                     </div>
                 </div>
+                <div className="py-8 flex justify-center">
+                    <Image src={LogoPng} width={120} height={60} alt="Espante logo"/>
+                </div>
             </main>
         </>
     )
