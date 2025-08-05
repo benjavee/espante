@@ -128,7 +128,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         </aside>
                     </div>
                 </div>
-                <div className="relative mx-auto max-w-5xl px-8 py-0 mt-24 rounded-lg shadow-lg"
+                <div className="relative mx-auto max-w-5xl px-8 py-6 md:py-0 mt-24 rounded-lg shadow-lg"
                      style={{backgroundColor: color}}>
                     <button
                         className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 rounded-full shadow-md">
