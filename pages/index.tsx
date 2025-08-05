@@ -158,9 +158,6 @@ useEffect(() => {
                                 @LaGoutanerie
                             </a>
                         </div>
-                        <div className="flex-shrink-0">
-                            <Image src="/assets/logo.svg" width={120} height={60} alt="Espante logo" />
-                        </div>
                     </div>
                 </section>
               {/* Bottom Logo */}
