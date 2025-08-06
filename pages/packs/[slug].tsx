@@ -119,7 +119,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                                     <a
                                         key={button.url}
                                         href={button.url}
-                                        className="bg-gray-800 text-white uppercase px-6 py-3 rounded-full shadow-md"
+                                        className="bg-gray-800 text-white uppercase px-6 py-3 rounded-full shadow-md transition-colors duration-200 hover:bg-gray-900"
                                     >
                                         {button.label}
                                     </a>
@@ -137,7 +137,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                     <div className="mt-8 flex justify-around items-center">
                         {packs.filter((p) => p.slug !== slug).map((otherPack) => (
                             <Link key={otherPack.slug} href={`/packs/${otherPack.slug}`}>
-                                <a className="block px-1">
+                                <a className="block px-1 transform transition-transform duration-200 ease-out hover:scale-105">
                                     <Image
                                         src={otherPack.logo}
                                         alt={`${otherPack.title} logo`}
