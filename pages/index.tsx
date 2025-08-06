@@ -20,18 +20,33 @@ import { packs } from '../model/packs'
 type PackCardProps = {
   slug: string
   image: any
+  color: string
 }
 
-const PackCard: React.FC<PackCardProps> = ({ slug, image }) => {
+const PackCard: React.FC<PackCardProps> = ({ slug, image, color }) => {
   const router = useRouter()
   return (
-    <div className="relative shadow-lg rounded-lg overflow-visible">
+    <div
+      className="relative overflow-visible cursor-pointer transition-shadow transition-transform duration-200 ease-out hover:shadow-4xl hover:-translate-y-1"
+      onClick={() => router.push(`/packs/${slug}`)}
+    >
+      <div className="relative rounded-xl overflow-hidden shadow-3xl drop-shadow-2xl bg-gradient-to-b from-white to-gray-50">
+      {/* Top color bar: 5% height */}
+      <div
+        className="absolute top-0 left-0 w-full"
+        style={{ height: '3%', backgroundColor: color }}
+      />
+      {/* Bottom color bar: 20% height */}
+      <div
+        className="absolute bottom-0 left-0 w-full"
+        style={{ height: '25%', backgroundColor: color }}
+      />
       <div className="relative w-full" style={{ paddingBottom: '210%' }}>
         <Image src={image} layout="fill" objectFit="contain" alt="" />
       </div>
+      </div>
       <button
-        className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 px-6 py-2 bg-gray-800 text-white rounded-lg shadow-md"
-        onClick={() => router.push(`/packs/${slug}`)}
+        className="absolute bottom-0 left-1/2 z-10 transform -translate-x-1/2 translate-y-7 px-6 py-2 bg-gray-800 text-white rounded-lg shadow-md transition-colors duration-200 hover:bg-gray-900"
       >
         Détails
       </button>
@@ -107,11 +122,11 @@ useEffect(() => {
                         <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 md:gap-y-6">
                           {packs.map(pack => (
                             <div key={pack.id} className="relative z-10">
-                              <PackCard slug={pack.slug} image={pack.preview} />
+                              <PackCard slug={pack.slug} image={pack.preview} color={pack.color} />
                             </div>
                           ))}
                         </div>
-                        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 opacity-50 pointer-events-none z-0">
+                        <div className="absolute -bottom-24 left-20 opacity-50 pointer-events-none z-0">
                           <Image src={dessinGueutas} width={200} height={150} alt="decorative sketch" />
                         </div>
                     </div>

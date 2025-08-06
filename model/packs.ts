@@ -88,7 +88,7 @@ export const packs: Pack[] = [
             {label: CASQUETTE_DESC, image: casquetteThumb},
             {label: TSHIRT_DESC, image: tshirtThumb},
         ],
-        color: '#6E688C',
+        color: '#153E60',
         stripeUrl:
             [
                 {
