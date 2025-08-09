@@ -57,9 +57,9 @@ const Cgv: NextPage = () => {
                             <Image src={LogoPng} width={200} height={80} alt="Espante logo" />
                         </div>
                         <nav className="space-x-6 text-white z-10 -translate-y-5">
-                            <Link href="/#home" className="hover:underline">Home</Link>
-                            <Link href="/#instagram" className="hover:underline">Contact</Link>
-                            <Link href="/#packs" className="hover:underline">Shop</Link>
+                            <Link href="/#home"><a className="hover:underline">Home</a></Link>
+                            <Link href="/#instagram"><a className="hover:underline">Contact</a></Link>
+                            <Link href="/#packs"><a className="hover:underline">Shop</a></Link>
                         </nav>
                     </div>
                 </header>
@@ -169,7 +169,7 @@ const Cgv: NextPage = () => {
 
                     <div>
                       <h3 className="font-semibold">8. Données personnelles</h3>
-                      <p>Les données collectées sont utilisées pour la gestion des précommandes, la livraison et la communication liée au projet. Voir la <Link href="#politique-de-confidentialite" className="underline underline-offset-4 hover:no-underline">Politique de confidentialité</Link>.</p>
+                      <p>Les données collectées sont utilisées pour la gestion des précommandes, la livraison et la communication liée au projet. Voir la <Link href="#politique-de-confidentialite"><a className="underline underline-offset-4 hover:no-underline">Politique de confidentialité</a></Link>.</p>
                     </div>
 
                     <div>
@@ -250,7 +250,7 @@ const Cgv: NextPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">8. Cookies</h3>
-                      <p>Voir la <Link href="#cookies" className="underline underline-offset-4 hover:no-underline">Politique de gestion des cookies</Link>.</p>
+                      <p>Voir la <Link href="#cookies"><a className="underline underline-offset-4 hover:no-underline">Politique de gestion des cookies</a></Link>.</p>
                     </div>
                   </div>
                 </section>
