@@ -128,7 +128,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         </aside>
                     </div>
                 </div>
-                <div className="relative mx-[10px] md:mx-auto max-w-5xl px-8 py-6 md:py-0 mt-24 rounded-lg shadow-lg"
+                <div className="relative mx-[10px] md:mx-auto max-w-5xl px-8 pt-6 pb-20 md:pt-0 md:pb-28 mt-24 mb-16 rounded-lg shadow-lg"
                      style={{backgroundColor: color}}>
                     <button
                         className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 whitespace-nowrap rounded-full shadow-md">
@@ -147,9 +147,44 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         ))}
                     </div>
                 </div>
-                <div className="py-8 flex justify-center">
-                    <Image src={LogoPng} width={120} height={60} alt="Espante logo"/>
-                </div>
+                <footer className="bg-[#FFF3D6]">
+                  <div className="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+                    <div>
+                      <p className="font-medium text-gray-600">Plan de site</p>
+                      <ul className="mt-2 space-y-1 text-gray-500">
+                        <li><Link href="/#home" className="hover:underline">Home</Link></li>
+                        <li><Link href="/#instagram" className="hover:underline">Contact</Link></li>
+                        <li><Link href="/#packs" className="hover:underline">Shop</Link></li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-gray-600">Mentions légales</p>
+                      <ul className="mt-2 space-y-1 text-gray-500">
+                        <li><Link href="/cgv#mentions-legales" className="hover:underline">Mentions légales</Link></li>
+                        <li><Link href="/cgv#cgv" className="hover:underline">CGV</Link></li>
+                        <li><Link href="/cgv#politique-de-confidentialite" className="hover:underline">Politique de confidentialité</Link></li>
+                        <li><Link href="/cgv#cookies" className="hover:underline">Gestion de cookies</Link></li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-gray-600">Contact</p>
+                      <ul className="mt-2 space-y-1 text-gray-500">
+                        <li>
+                          <a href="https://instagram.com/LaGoutanerie" target="_blank" rel="noopener noreferrer" className="hover:underline">@ LaGoutanerie</a>
+                        </li>
+                        <li>
+                          <a href="mailto:lagoutanerie@gmail.com" className="hover:underline">lagoutanerie@gmail.com</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="justify-self-end">
+                      <Image src={LogoPng} width={140} height={70} alt="Espante logo" />
+                    </div>
+                  </div>
+                </footer>
             </main>
         </>
     )
