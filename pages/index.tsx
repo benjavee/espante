@@ -178,19 +178,19 @@ useEffect(() => {
                   <div>
                     <p className="font-medium text-gray-600">Plan de site</p>
                     <ul className="mt-2 space-y-1 text-gray-500">
-                      <li><Link href="/#home" className="hover:underline">Home</Link></li>
-                      <li><Link href="/#instagram" className="hover:underline">Contact</Link></li>
-                      <li><Link href="/#packs" className="hover:underline">Shop</Link></li>
+                      <li><Link href="/#home"><a className="hover:underline">Home</a></Link></li>
+                      <li><Link href="/#instagram"><a className="hover:underline">Contact</a></Link></li>
+                      <li><Link href="/#packs"><a className="hover:underline">Shop</a></Link></li>
                     </ul>
                   </div>
 
                   <div>
                     <p className="font-medium text-gray-600">Mentions légales</p>
                     <ul className="mt-2 space-y-1 text-gray-500">
-                      <li><Link href="/cgv#mentions-legales" className="hover:underline">Mentions légales</Link></li>
-                      <li><Link href="/cgv#cgv" className="hover:underline">CGV</Link></li>
-                      <li><Link href="/cgv#politique-de-confidentialite" className="hover:underline">Politique de confidentialité</Link></li>
-                      <li><Link href="/cgv#cookies" className="hover:underline">Gestion de cookies</Link></li>
+                      <li><Link href="/cgv#mentions-legales"><a className="hover:underline">Mentions légales</a></Link></li>
+                      <li><Link href="/cgv#cgv"><a className="hover:underline">CGV</a></Link></li>
+                      <li><Link href="/cgv#politique-de-confidentialite"><a className="hover:underline">Politique de confidentialité</a></Link></li>
+                      <li><Link href="/cgv#cookies"><a className="hover:underline">Gestion de cookies</a></Link></li>
                     </ul>
                   </div>
 
