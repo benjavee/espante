@@ -10,6 +10,7 @@ import dessinGueutas from '../assets/dessin_gueutas.svg'
 import fanzineImage from '../assets/fanzine.png'
 import persoMain from '../assets/Perso_plein_pied_logo.svg'
 import persoPortrait from '../assets/Perso_portrait_americain.svg'
+import premierDrop from '../assets/premier_drop.png'
 
 
 import LogoPng from '../assets/logo.png'
@@ -102,36 +103,42 @@ const Home: NextPage = () => {
                 </header>
                 {/* Hero Section */}
                 <section id="home" className="relative overflow-hidden bg-yellow-50">
-                    <div aria-hidden className="pointer-events-none absolute -top-[18vw] -right-[18vw] w-[95vw] md:w-[70vw] max-w-[1200px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0" />
-                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-16 md:pt-20 pb-8 md:pb-12">
-                      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10">
-                        {/* Bloc Livraison à gauche */}
-                        <div className="lg:col-span-4 order-2 lg:order-1">
-                          <p className="text-4xl md:text-5xl font-black leading-none">Livraison</p>
-                          <p className="mt-2 text-[#F4BF3C] text-6xl md:text-7xl font-extrabold leading-none">Automne</p>
-                          <p className="mt-2 text-5xl md:text-6xl font-light leading-none">2025</p>
-                        </div>
+                    <div aria-hidden
+                         className="pointer-events-none absolute -top-[18vw] -right-[18vw] w-[95vw] md:w-[70vw] max-w-[1200px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"/>
+                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-6 md:pt-8 pb-2 md:pb-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
+                            {/* Bloc Livraison à gauche */}
+                            <div className="lg:col-span-4 order-2 lg:order-1">
+                                <p className="text-4xl md:text-5xl font-black leading-none">Livraison</p>
+                                <p className="mt-2 text-[#F4BF3C] text-6xl md:text-7xl font-extrabold leading-none">Automne</p>
+                                <p className="mt-2 text-5xl md:text-6xl font-light leading-none">2025</p>
+                            </div>
 
-                        {/* Colonne visuel + bulle + titre */}
-                        <div className="lg:col-span-8 order-1 lg:order-2 relative flex flex-col items-center">
-                          {/* Bulle décorative derrière le bloc droit */}
-                          <div
-                            aria-hidden
-                            className="absolute -top-14 md:-top-20 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] max-w-[760px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"
-                          />
-                          {/* Titre au-dessus des images */}
-                          <div className="relative z-20 text-center">
-                            <h1 className="text-5xl md:text-6xl font-black leading-tight">Nouveau</h1>
-                            <div className="text-6xl md:text-7xl font-extrabold text-[#6e688c] leading-none">Fanzine</div>
-                            <p className="mt-4 text-xl md:text-2xl uppercase tracking-wide font-black">4 PACKS EN PRÉCOMMANDES</p>
-                          </div>
+                            {/* Colonne visuel + bulle + titre */}
+                            <div className="lg:col-span-8 order-1 lg:order-2 relative flex flex-col items-center">
+                                {/* Bulle décorative derrière le bloc droit */}
+                                <div
+                                    aria-hidden
+                                    className="absolute -top-14 md:-top-20 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] max-w-[760px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"
+                                />
+                                {/* Titre au-dessus des images */}
+                                <div
+                                    className="relative z-20 text-center translate-y-8 md:translate-y-12 lg:translate-y-14 translate-x-[40%] md:translate-x-[55%] lg:translate-x-[65%] -mb-6 md:-mb-8">
+                                    <h1 className="text-5xl md:text-6xl font-black leading-tight">Nouveau</h1>
+                                    <div
+                                        className="text-6xl md:text-7xl font-extrabold text-[#6e688c] leading-none">Fanzine
+                                    </div>
+                                    <p className="mt-1 md:mt-2 text-xl md:text-2xl uppercase tracking-wide font-black">4
+                                        PACKS EN PRÉCOMMANDES</p>
+                                </div>
 
-                          {/* Visuel en dessous du titre */}
-                          <div className="relative z-10 mt-6 w-full h-72 md:h-[460px] lg:h-[560px] xl:h-[640px] drop-shadow-xl">
-                            <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview" />
-                          </div>
+                                {/* Visuel en dessous du titre */}
+                                <div
+                                    className="relative z-10 -mt-6 md:-mt-10 w-full h-72 md:h-[460px] lg:h-[560px] xl:h-[640px] drop-shadow-xl">
+                                    <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview"/>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
                 </section>
 
@@ -183,25 +190,102 @@ const Home: NextPage = () => {
 
                 {/* Footer / CTA Section */}
                 <section className="py-16 bg-purple-100">
-                    <div
-                        className="max-w-5xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-8">
-                        <div className="relative w-full h-64">
-                            <Image src={persoPortrait} layout="fill" objectFit="contain" alt="Contact us"/>
+                    <div className="max-w-5xl mx-auto px-4">
+                        {/* Top two-column layout */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                             style={{minHeight: '360px'}}>
+                            {/* Left: character image and wording side by side */}
+                            <div className="relative h-full min-h-[360px] flex items-end justify-between gap-4">
+                                <div className="relative h-[85%] w-[48%]">
+                                    <Image
+                                        src={persoPortrait}
+                                        layout="fill"
+                                        objectFit="contain"
+                                        alt="Contact us"
+                                        className="object-contain object-left"
+                                        style={{objectPosition: 'left bottom'}}
+                                    />
+                                </div>
+                                <div className="pb-4 ml-auto max-w-[46%] pr-2">
+                                    <div className="text-white text-3xl font-extrabold leading-tight">Paiement<br/>Sécurisé
+                                    </div>
+                                    <div
+                                        className="mt-3 text-[#F4BF3C] text-5xl md:text-6xl font-black leading-none">Livraison<br/>Possible
+                                    </div>
+                                    <div
+                                        className="mt-4 text-white text-3xl tracking-wide leading-tight uppercase">Remise
+                                        en<br/>main propre
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Right: payment + shipping wording blocks */}
+                            <div
+                                className="relative z-10 justify-self-end lg:ml-auto lg:pl-0 lg:pr-[10%] max-w-[520px]">
+                                <p className="text-2xl font-semibold text-gray-900">Carte bancaire<br/>via Stripes</p>
+                                <div className="mt-8">
+                                    <p className="text-2xl font-extrabold text-[#6e688c] leading-none">Frais de
+                                        port<br/>non inclus</p>
+                                    <p className="text-sm text-[#6e688c] mt-1">Calculé sur stripes selon destination</p>
+                                </div>
+                                <p className="mt-8 text-lg text-gray-900">Lors de la release party<br/>ou sur
+                                    Montpellier</p>
+                            </div>
                         </div>
-                        <div className="flex-1">
-                            <h2 className="text-3xl font-bold">Paiement Sécurisé</h2>
-                            <p className="mt-2 text-xl">Livraison Possible • Remise en main propre</p>
-                            <p className="mt-4 text-sm text-gray-700">Si tu as la moindre question, viens me parler sur
-                                Insta!</p>
+
+                        {/* Bottom CTA bar spanning full width */}
+                        <div
+                            className="mt-8 bg-gray-200 rounded-xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+                            <p className="text-xl text-[#6e688c] font-medium text-center md:text-left">Si tu as la
+                                moindre question, viens me parler sur Insta!</p>
                             <a
                                 id="instagram"
                                 href="https://instagram.com/LaGoutanerie"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-4 inline-block px-4 py-2 bg-pink-500 text-white rounded-md"
+                                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#F58529] text-white font-semibold shadow-md"
                             >
                                 @LaGoutanerie
                             </a>
+                        </div>
+                    </div>
+                </section>
+
+                {/* First Drop Promo Section */}
+                <section className="py-4 md:py-6 bg-[#5a5658]">
+                    <div className="max-w-6xl mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            {/* Left: product visual */}
+                            <div className="relative w-full h-[500px] drop-shadow-xl">
+                                <Image
+                                    src={premierDrop}
+                                    layout="fill"
+                                    objectFit="contain"
+                                    alt="Ma première BD – visuel"
+                                    className="scale-125"
+                                    style={{ transformOrigin: 'center' }}
+                                />
+                            </div>
+
+                            {/* Right: wording + CTA */}
+                            <div className="text-white">
+                                <h3 className="text-3xl md:text-4xl font-extrabold leading-tight">Ma première BD –<br/>Disponible
+                                    !</h3>
+                                <p className="mt-4 text-sm md:text-base text-gray-300 max-w-prose">
+                                    Offrez-vous ma première bande dessinée, déjà publiée. Une création indépendante
+                                    mêlant histoire originale et dessins soignés, pour tous les amateurs de BD uniques.
+                                </p>
+                                <div className="mt-6">
+                                    <a
+                                        href="https://buy.stripe.com/00w9AU8wYaZD1rO1TAcZa05"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold bg-[#F58529] text-white shadow-[0_6px_0_0_rgba(0,0,0,0.25)] active:translate-y-[2px] active:shadow-[0_4px_0_0_rgba(0,0,0,0.25)]"
+                                    >
+                                        COMMANDEZ
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
