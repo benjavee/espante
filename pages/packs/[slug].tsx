@@ -162,7 +162,7 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         <button
                           type="button"
                           onClick={() => setIsModalOpen(false)}
-                          className="absolute -top-10 right-0 z-20 bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded"
+                          className="absolute top-2 right-2 z-20 bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded"
                           aria-label="Fermer"
                         >
                           Fermer
