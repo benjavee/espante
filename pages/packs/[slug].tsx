@@ -128,13 +128,14 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         </aside>
                     </div>
                 </div>
-                <div className="relative mx-[10px] md:mx-auto max-w-5xl px-8 pt-6 pb-20 md:pt-0 md:pb-28 mt-24 mb-16 rounded-lg shadow-lg"
-                     style={{backgroundColor: color}}>
+                <div
+                    className="relative mx-[10px] md:mx-auto max-w-5xl px-8 py-14 md:py-14 mt-24 mb-16 rounded-lg shadow-lg"
+                    style={{backgroundColor: color}}>
                     <button
                         className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white uppercase px-6 py-2 whitespace-nowrap rounded-full shadow-md">
                         Les autres packs
                     </button>
-                    <div className="mt-8 flex justify-around items-center">
+                  <div className="flex justify-around items-center py-8">
                         {packs.filter((p) => p.slug !== slug).map((otherPack) => (
                             <Link key={otherPack.slug} href={`/packs/${otherPack.slug}`}>
                                 <a className="block px-1 transform transition-transform duration-200 ease-out hover:scale-105">
@@ -148,42 +149,52 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                     </div>
                 </div>
                 <footer className="bg-[#FFF3D6]">
-                  <div className="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
-                    <div>
-                      <p className="font-medium text-gray-600">Plan de site</p>
-                      <ul className="mt-2 space-y-1 text-gray-500">
-                        <li><Link href="/#home"><a className="hover:underline">Home</a></Link></li>
-                        <li><Link href="/#instagram"><a className="hover:underline">Contact</a></Link></li>
-                        <li><Link href="/#packs"><a className="hover:underline">Shop</a></Link></li>
-                      </ul>
-                    </div>
+                    <div
+                        className="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+                        <div>
+                            <p className="font-medium text-gray-600">Plan de site</p>
+                            <ul className="mt-2 space-y-1 text-gray-500">
+                                <li><Link href="/#home"><a className="hover:underline">Home</a></Link></li>
+                                <li><Link href="/#instagram"><a className="hover:underline">Contact</a></Link></li>
+                                <li><Link href="/#packs"><a className="hover:underline">Shop</a></Link></li>
+                            </ul>
+                        </div>
 
-                    <div>
-                      <p className="font-medium text-gray-600">Mentions légales</p>
-                      <ul className="mt-2 space-y-1 text-gray-500">
-                        <li><Link href="/cgv#mentions-legales"><a className="hover:underline">Mentions légales</a></Link></li>
-                        <li><Link href="/cgv#cgv"><a className="hover:underline">CGV</a></Link></li>
-                        <li><Link href="/cgv#politique-de-confidentialite"><a className="hover:underline">Politique de confidentialité</a></Link></li>
-                        <li><Link href="/cgv#cookies"><a className="hover:underline">Gestion de cookies</a></Link></li>
-                      </ul>
-                    </div>
+                        <div>
+                            <p className="font-medium text-gray-600">Mentions légales</p>
+                            <ul className="mt-2 space-y-1 text-gray-500">
+                                <li><Link href="/cgv#mentions-legales"><a className="hover:underline">Mentions
+                                    légales</a></Link></li>
+                                <li><Link href="/cgv#cgv"><a className="hover:underline">CGV</a></Link></li>
+                                <li><Link href="/cgv#politique-de-confidentialite"><a className="hover:underline">Politique
+                                    de confidentialité</a></Link></li>
+                                <li><Link href="/cgv#cookies"><a className="hover:underline">Gestion de
+                                    cookies</a></Link></li>
+                            </ul>
+                        </div>
 
-                    <div>
-                      <p className="font-medium text-gray-600">Contact</p>
-                      <ul className="mt-2 space-y-1 text-gray-500">
-                        <li>
-                          <a href="https://instagram.com/LaGoutanerie" target="_blank" rel="noopener noreferrer" className="hover:underline">@ LaGoutanerie</a>
-                        </li>
-                        <li>
-                          <a href="mailto:lagoutanerie@gmail.com" className="hover:underline">lagoutanerie@gmail.com</a>
-                        </li>
-                      </ul>
-                    </div>
+                        <div>
+                            <p className="font-medium text-gray-600">Contact</p>
+                            <ul className="mt-2 space-y-1 text-gray-500">
+                                <li>
+                                    <a href="https://instagram.com/LaGoutanerie" target="_blank"
+                                       rel="noopener noreferrer" className="hover:underline">@ LaGoutanerie</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:lagoutanerie@gmail.com"
+                                       className="hover:underline">lagoutanerie@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div className="justify-self-end">
-                      <Image src={LogoPng} width={140} height={70} alt="Espante logo" />
+                        <div className="justify-self-end">
+                            <Link href="/">
+                                <a>
+                                    <Image src={LogoPng} width={140} height={70} alt="Espante logo"/>
+                                </a>
+                            </Link>
+                        </div>
                     </div>
-                  </div>
                 </footer>
             </main>
         </>
