@@ -134,12 +134,13 @@ const Home: NextPage = () => {
 
                                 {/* Visuel en dessous du titre */}
                                 <div
-                                    className="relative z-10 -mt-4 md:-mt-8 w-full h-60 md:h-[360px] lg:h-[420px] xl:h-[480px] drop-shadow-xl overflow-visible">
+                                    className="relative z-10 -mt-4 md:-mt-8 w-full h-60 md:h-[360px] lg:h-[420px] xl:h-[480px] drop-shadow-xl">
                                     <Image
                                         src={fanzineImage}
                                         layout="fill"
                                         objectFit="contain"
-                                        className="object-contain object-left -translate-x-10 md:-translate-x-20"
+                                        className="object-contain object-left -translate-x-4 md:-translate-x-8"
+                                        objectPosition="left center"
                                         alt="Fanzine preview"
                                     />
                                 </div>
