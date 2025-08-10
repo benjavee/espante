@@ -203,7 +203,7 @@ const Home: NextPage = () => {
                                         objectFit="contain"
                                         alt="Contact us"
                                         className="object-contain object-left"
-                                        style={{objectPosition: 'left bottom'}}
+                                        objectPosition="left bottom"
                                     />
                                 </div>
                                 <div className="pb-4 ml-auto max-w-[46%] pr-2">
@@ -262,8 +262,7 @@ const Home: NextPage = () => {
                                     layout="fill"
                                     objectFit="contain"
                                     alt="Ma première BD – visuel"
-                                    className="scale-125"
-                                    style={{ transformOrigin: 'center' }}
+                                    className="scale-125 origin-center"
                                 />
                             </div>
 
