@@ -66,25 +66,24 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                                     objectFit="contain"
                                     alt={`${title} detail ${currentIndex + 1}`}
                                 />
-                                {/* Thumbnails on right */}
-                                <div className="absolute top-0 right-0 h-full flex flex-col p-2 space-y-2 bg-white/50">
-                                    {slides.map((slide, idx) => (
-                                        <button
-                                            key={slide.label}
-                                            onClick={() => setCurrentIndex(idx)}
-                                            className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                                                idx === currentIndex ? 'border-white' : 'border-gray-300'
-                                            }`}
-                                        >
-                                            <Image
-                                                src={slide.image}
-                                                layout="fill"
-                                                objectFit="cover"
-                                                alt={slide.label}
-                                            />
-                                        </button>
-                                    ))}
-                                </div>
+                            </div>
+                            {/* Thumbnails at bottom */}
+                            <div className="mt-4 w-full flex flex-row justify-center space-x-2">
+                                {slides.map((slide, idx) => (
+                                    <button
+                                        type="button"
+                                        key={slide.label}
+                                        onClick={() => setCurrentIndex(idx)}
+                                        className={`relative w-20 h-20 rounded-lg overflow-hidden ${idx === currentIndex ? 'border-2 border-black' : 'border-0'} focus:outline-none focus:ring-0`}
+                                    >
+                                        <Image
+                                            src={slide.image}
+                                            layout="fill"
+                                            objectFit="cover"
+                                            alt={slide.label}
+                                        />
+                                    </button>
+                                ))}
                             </div>
                         </div>
 
