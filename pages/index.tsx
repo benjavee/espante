@@ -102,24 +102,41 @@ const Home: NextPage = () => {
                 </header>
                 {/* Hero Section */}
                 <section id="home" className="relative overflow-hidden bg-yellow-50">
-                    {/* Background Circle */}
-                    <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-yellow-200 rounded-full"/>
-                    {/* Hero Content */}
-                    <div
-                        className="relative z-10 max-w-5xl mx-[10px] md:mx-auto px-4 py-12 md:py-20 flex flex-col lg:flex-row items-center gap-8">
-                        <div className="w-full lg:w-1/2">
-                            <h1 className="text-5xl font-extrabold">Nouveau Fanzine</h1>
-                            <p className="mt-2 text-2xl">4 packs en précommande</p>
-                            <p className="mt-8 text-lg font-medium">Livraison Automne 2025</p>
+                    <div aria-hidden className="pointer-events-none absolute -top-[18vw] -right-[18vw] w-[95vw] md:w-[70vw] max-w-[1200px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0" />
+                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-16 md:pt-20 pb-8 md:pb-12">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10">
+                        {/* Bloc Livraison à gauche */}
+                        <div className="lg:col-span-4 order-2 lg:order-1">
+                          <p className="text-4xl md:text-5xl font-black leading-none">Livraison</p>
+                          <p className="mt-2 text-[#F4BF3C] text-6xl md:text-7xl font-extrabold leading-none">Automne</p>
+                          <p className="mt-2 text-5xl md:text-6xl font-light leading-none">2025</p>
                         </div>
-                        <div className="w-full lg:w-1/2 relative h-64 md:h-80">
-                            <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview"/>
+
+                        {/* Colonne visuel + bulle + titre */}
+                        <div className="lg:col-span-8 order-1 lg:order-2 relative flex flex-col items-center">
+                          {/* Bulle décorative derrière le bloc droit */}
+                          <div
+                            aria-hidden
+                            className="absolute -top-14 md:-top-20 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] max-w-[760px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"
+                          />
+                          {/* Titre au-dessus des images */}
+                          <div className="relative z-20 text-center">
+                            <h1 className="text-5xl md:text-6xl font-black leading-tight">Nouveau</h1>
+                            <div className="text-6xl md:text-7xl font-extrabold text-[#6e688c] leading-none">Fanzine</div>
+                            <p className="mt-4 text-xl md:text-2xl uppercase tracking-wide font-black">4 PACKS EN PRÉCOMMANDES</p>
+                          </div>
+
+                          {/* Visuel en dessous du titre */}
+                          <div className="relative z-10 mt-6 w-full h-72 md:h-[460px] lg:h-[560px] xl:h-[640px] drop-shadow-xl">
+                            <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview" />
+                          </div>
                         </div>
+                      </div>
                     </div>
                 </section>
 
                 {/* Packs Section */}
-                <section id="packs" className="py-16 bg-white relative overflow-visible">
+                <section id="packs" className="pt-8 pb-16 bg-white relative overflow-visible">
                     <div className="max-w-5xl mx-[10px] md:mx-auto px-4 relative">
                         <h2 className="text-2xl font-bold text-center mb-8">Les 4 Packs</h2>
                         <div

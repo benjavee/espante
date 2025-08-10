@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import {packs, Pack} from '../../model/packs'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import LogoPng from "../../assets/logo.png";
 
 type PackPageProps = {
@@ -15,7 +15,24 @@ type PackPageProps = {
 const PackPage: NextPage<PackPageProps> = ({pack}) => {
     const {slug, title, price, items, color, logo, preview, stripeUrl, detail} = pack
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const slides = [{label: 'preview', image: detail}, ...items]
+
+    useEffect(() => {
+        if (!isModalOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsModalOpen(false);
+            if (e.key === 'ArrowRight') {
+                setCurrentIndex((i) => (i + 1) % slides.length);
+            }
+            if (e.key === 'ArrowLeft') {
+                setCurrentIndex((i) => (i - 1 + slides.length) % slides.length);
+            }
+        };
+        document.addEventListener('keydown', onKey);
+        return () => document.removeEventListener('keydown', onKey);
+    }, [isModalOpen, slides.length])
+
     return (
         <>
             <Head>
@@ -60,12 +77,19 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         {/* Preview + price */}
                         <div className="col-span-7 relative bg-white rounded-lg overflow-hidden p-3">
                             <div className="relative w-full h-[450px] bg-gray-100 rounded-lg overflow-hidden">
-                                <Image
-                                    src={slides[currentIndex].image}
-                                    layout="fill"
-                                    objectFit="contain"
-                                    alt={`${title} detail ${currentIndex + 1}`}
-                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setIsModalOpen(true)}
+                                    className="absolute inset-0 cursor-zoom-in"
+                                    aria-label="Agrandir l'image"
+                                >
+                                    <Image
+                                        src={slides[currentIndex].image}
+                                        layout="fill"
+                                        objectFit="contain"
+                                        alt={`${title} detail ${currentIndex + 1}`}
+                                    />
+                                </button>
                             </div>
                             {/* Thumbnails at bottom */}
                             <div className="mt-4 w-full flex flex-row justify-center space-x-2">
@@ -127,6 +151,51 @@ const PackPage: NextPage<PackPageProps> = ({pack}) => {
                         </aside>
                     </div>
                 </div>
+                {isModalOpen && (
+                    <div
+                      className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4"
+                      role="dialog"
+                      aria-modal="true"
+                      onClick={() => setIsModalOpen(false)}
+                    >
+                      <div className="relative w-full max-w-5xl h-[80vh]" onClick={(e) => e.stopPropagation()}>
+                        <button
+                          type="button"
+                          onClick={() => setIsModalOpen(false)}
+                          className="absolute -top-10 right-0 z-20 bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded"
+                          aria-label="Fermer"
+                        >
+                          Fermer
+                        </button>
+                        {/* Prev / Next arrows */}
+                        <button
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); setCurrentIndex((i) => (i - 1 + slides.length) % slides.length); }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-full"
+                          aria-label="Image précédente"
+                        >
+                          ‹
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); setCurrentIndex((i) => (i + 1) % slides.length); }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-full"
+                          aria-label="Image suivante"
+                        >
+                          ›
+                        </button>
+                        <div className="absolute inset-0 z-0 pointer-events-none">
+                          <Image
+                            src={slides[currentIndex].image}
+                            layout="fill"
+                            objectFit="contain"
+                            alt={`${title} agrandi ${currentIndex + 1}`}
+                            priority
+                          />
+                        </div>
+                      </div>
+                    </div>
+                )}
                 <div
                     className="relative mx-[10px] md:mx-auto max-w-5xl px-8 py-14 md:py-14 mt-24 mb-16 rounded-lg shadow-lg"
                     style={{backgroundColor: color}}>
