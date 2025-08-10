@@ -105,13 +105,13 @@ const Home: NextPage = () => {
                 <section id="home" className="relative overflow-hidden bg-yellow-50">
                     <div aria-hidden
                          className="pointer-events-none absolute -top-[18vw] -right-[18vw] w-[95vw] md:w-[70vw] max-w-[1200px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"/>
-                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-6 md:pt-8 pb-2 md:pb-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
+                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-3 md:pt-4 pb-0 md:pb-1">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-4">
                             {/* Bloc Livraison à gauche */}
                             <div className="lg:col-span-4 order-2 lg:order-1">
-                                <p className="text-4xl md:text-5xl font-black leading-none">Livraison</p>
-                                <p className="mt-2 text-[#F4BF3C] text-6xl md:text-7xl font-extrabold leading-none">Automne</p>
-                                <p className="mt-2 text-5xl md:text-6xl font-light leading-none">2025</p>
+                                <p className="text-3xl md:text-4xl font-black leading-none">Livraison</p>
+                                <p className="mt-2 text-[#F4BF3C] text-5xl md:text-6xl font-extrabold leading-none">Automne</p>
+                                <p className="mt-2 text-4xl md:text-5xl font-light leading-none">2025</p>
                             </div>
 
                             {/* Colonne visuel + bulle + titre */}
@@ -119,23 +119,29 @@ const Home: NextPage = () => {
                                 {/* Bulle décorative derrière le bloc droit */}
                                 <div
                                     aria-hidden
-                                    className="absolute -top-14 md:-top-20 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] max-w-[760px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"
+                                    className="absolute -top-8 md:-top-12 left-1/2 -translate-x-1/2 w-[70%] md:w-[55%] max-w-[760px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"
                                 />
                                 {/* Titre au-dessus des images */}
                                 <div
-                                    className="relative z-20 text-center translate-y-8 md:translate-y-12 lg:translate-y-14 translate-x-[40%] md:translate-x-[55%] lg:translate-x-[65%] -mb-6 md:-mb-8">
-                                    <h1 className="text-5xl md:text-6xl font-black leading-tight">Nouveau</h1>
+                                    className="relative z-20 text-center translate-y-3 md:translate-y-5 lg:translate-y-6 translate-x-[40%] md:translate-x-[55%] lg:translate-x-[65%] -mb-6 md:-mb-8">
+                                    <h1 className="text-3xl md:text-4xl font-black leading-snug">Nouveau</h1>
                                     <div
-                                        className="text-6xl md:text-7xl font-extrabold text-[#6e688c] leading-none">Fanzine
+                                        className="text-4xl md:text-5xl font-extrabold text-[#6e688c] leading-snug">Fanzine
                                     </div>
-                                    <p className="mt-1 md:mt-2 text-xl md:text-2xl uppercase tracking-wide font-black">4
+                                    <p className="mt-1 md:mt-2 text-base md:text-lg uppercase tracking-wide font-black">4
                                         PACKS EN PRÉCOMMANDES</p>
                                 </div>
 
                                 {/* Visuel en dessous du titre */}
                                 <div
-                                    className="relative z-10 -mt-6 md:-mt-10 w-full h-72 md:h-[460px] lg:h-[560px] xl:h-[640px] drop-shadow-xl">
-                                    <Image src={fanzineImage} layout="fill" objectFit="contain" alt="Fanzine preview"/>
+                                    className="relative z-10 -mt-4 md:-mt-8 w-full h-60 md:h-[360px] lg:h-[420px] xl:h-[480px] drop-shadow-xl overflow-visible">
+                                    <Image
+                                        src={fanzineImage}
+                                        layout="fill"
+                                        objectFit="contain"
+                                        className="object-contain object-left -translate-x-10 md:-translate-x-20"
+                                        alt="Fanzine preview"
+                                    />
                                 </div>
                             </div>
                         </div>
