@@ -105,13 +105,13 @@ const Home: NextPage = () => {
                 <section id="home" className="relative overflow-hidden bg-yellow-50">
                     <div aria-hidden
                          className="pointer-events-none absolute -top-[18vw] -right-[18vw] w-[95vw] md:w-[70vw] max-w-[1200px] aspect-square rounded-full bg-[#FFEAA6] opacity-90 z-0"/>
-                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-3 md:pt-4 pb-0 md:pb-1">
+                    <div className="relative z-10 max-w-6xl mx-[10px] md:mx-auto px-4 pt-1 md:pt-4 pb-0 md:pb-1">
                         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-4">
                             {/* Bloc Livraison à gauche */}
-                            <div className="lg:col-span-4 order-2 lg:order-1">
-                                <p className="text-3xl md:text-4xl font-black leading-none">Livraison</p>
-                                <p className="mt-2 text-[#F4BF3C] text-5xl md:text-6xl font-extrabold leading-none">Automne</p>
-                                <p className="mt-2 text-4xl md:text-5xl font-light leading-none">2025</p>
+                            <div className="lg:col-span-4 order-2 lg:order-1 -mt-6 md:mt-0">
+                                <p className="text-2xl md:text-4xl font-black leading-tight">Livraison</p>
+                                <p className="mt-1 text-[#F4BF3C] text-4xl md:text-6xl font-extrabold leading-tight">Automne</p>
+                                <p className="mt-1 text-3xl md:text-5xl font-light leading-tight">2025</p>
                             </div>
 
                             {/* Colonne visuel + bulle + titre */}
@@ -123,24 +123,21 @@ const Home: NextPage = () => {
                                 />
                                 {/* Titre au-dessus des images */}
                                 <div
-                                    className="relative z-20 text-center translate-y-3 md:translate-y-5 lg:translate-y-6 translate-x-[40%] md:translate-x-[55%] lg:translate-x-[65%] -mb-6 md:-mb-8">
-                                    <h1 className="text-3xl md:text-4xl font-black leading-snug">Nouveau</h1>
-                                    <div
-                                        className="text-4xl md:text-5xl font-extrabold text-[#6e688c] leading-snug">Fanzine
-                                    </div>
-                                    <p className="mt-1 md:mt-2 text-base md:text-lg uppercase tracking-wide font-black">4
-                                        PACKS EN PRÉCOMMANDES</p>
+                                    className="relative z-20 text-center translate-y-0 md:translate-y-5 lg:translate-y-6 translate-x-0 md:translate-x-[55%] lg:translate-x-[65%] -mb-2 md:-mb-8">
+                                    <h1 className="whitespace-nowrap text-3xl md:text-5xl font-extrabold leading-tight">
+                                        Nouveau <span className="text-[#6e688c]">Fanzine</span>
+                                    </h1>
+                                    <p className="mt-1 md:mt-2 text-base md:text-lg uppercase tracking-wide font-black">4 PACKS EN PRÉCOMMANDES</p>
                                 </div>
 
                                 {/* Visuel en dessous du titre */}
                                 <div
-                                    className="relative z-10 -mt-4 md:-mt-8 w-full h-60 md:h-[360px] lg:h-[420px] xl:h-[480px] drop-shadow-xl">
+                                    className="relative z-10 mt-1 md:-mt-8 w-full h-64 md:h-[360px] lg:h-[420px] xl:h-[480px] drop-shadow-xl">
                                     <Image
                                         src={fanzineImage}
                                         layout="fill"
                                         objectFit="contain"
-                                        className="object-contain object-left -translate-x-4 md:-translate-x-8"
-                                        objectPosition="left center"
+                                        className="object-contain object-center translate-x-0 md:object-left md:-translate-x-8"
                                         alt="Fanzine preview"
                                     />
                                 </div>
@@ -220,7 +217,9 @@ const Home: NextPage = () => {
                                     >Paiement<br/>Sécurisé
                                     </div>
                                     <div
-                                        className="mt-3 text-[#F4BF3C] text-5xl md:text-6xl font-black leading-none">Livraison<br/>Possible
+                                        className="mt-3 text-[#F4BF3C] text-4xl md:text-6xl font-black leading-none"
+                                    >
+                                        Livraison<span className="hidden md:inline"><br/></span><span className="md:hidden"> </span>Possible
                                     </div>
                                     <div
                                         className="mt-4 text-white text-3xl tracking-wide leading-tight uppercase"
