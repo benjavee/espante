@@ -214,13 +214,18 @@ const Home: NextPage = () => {
                                     />
                                 </div>
                                 <div className="pb-4 ml-auto max-w-[46%] pr-2">
-                                    <div className="text-white text-3xl font-extrabold leading-tight">Paiement<br/>Sécurisé
+                                    <div
+                                        className="text-white text-3xl font-extrabold leading-tight"
+                                        style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+                                    >Paiement<br/>Sécurisé
                                     </div>
                                     <div
                                         className="mt-3 text-[#F4BF3C] text-5xl md:text-6xl font-black leading-none">Livraison<br/>Possible
                                     </div>
                                     <div
-                                        className="mt-4 text-white text-3xl tracking-wide leading-tight uppercase">Remise
+                                        className="mt-4 text-white text-3xl tracking-wide leading-tight uppercase"
+                                        style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+                                    >Remise
                                         en<br/>main propre
                                     </div>
                                 </div>
